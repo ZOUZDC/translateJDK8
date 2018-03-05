@@ -53,7 +53,7 @@
  * update operation {@code weakCompareAndSet} described below.
  *
  * <p>这个方法(在不同的类中参数可能不同)能在当前值与期望值(expectedValue)相同的时候,讲当前值原子性的设置为指定的值(updateValue)
- * ,完成后并且返回true, 该包中的类也包含获取和无条件设置值的方法,以及在以下描述的较弱的条件下的原子更新操作weakCompareAndSet
+ * ,完成后并且返回true, 该包中的类也包含获取和无条件设置值的方法,以及在以下描述的较弱的条件下的原子更新操作 weakCompareAndSet
  * </p>
  *
  *
