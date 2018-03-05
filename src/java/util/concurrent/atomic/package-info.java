@@ -40,6 +40,9 @@
  * array elements to those that also provide an atomic conditional update
  * operation of the form:
  *
+ *<p>类的小工具包,支持在单个变量上解除锁的线程安全的编程.事实上,此包延伸了volatile,字段和数组元素的概念并将其扩展
+ * 到那些也提供原子条件更新操作的类上,形式如下: </p>
+ *
  *  <pre> {@code boolean compareAndSet(expectedValue, updateValue);}</pre>
  *
  * <p>This method (which varies in argument types across different
@@ -48,6 +51,11 @@
  * success.  The classes in this package also contain methods to get and
  * unconditionally set values, as well as a weaker conditional atomic
  * update operation {@code weakCompareAndSet} described below.
+ *
+ * <p>这个方法(在不同的类中参数可能不同)能在当前值与期望值(expectedValue)相同的时候,讲当前值原子性的设置为指定的值(updateValue)
+ * ,完成后并且返回true, 该包中的类也包含获取和无条件设置值的方法,以及在以下描述的较弱的条件下的原子更新操作weakCompareAndSet
+ * </p>
+ *
  *
  * <p>The specifications of these methods enable implementations to
  * employ efficient machine-level atomic instructions that are available

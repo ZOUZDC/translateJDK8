@@ -67,6 +67,7 @@ public class AtomicBoolean implements java.io.Serializable {
 
     /**
      * Creates a new {@code AtomicBoolean} with the given initial value.
+     *<p>创建一个新的AtomicBoolean并赋初始值
      *
      * @param initialValue the initial value
      */
@@ -76,13 +77,14 @@ public class AtomicBoolean implements java.io.Serializable {
 
     /**
      * Creates a new {@code AtomicBoolean} with initial value {@code false}.
+     * <p>用初始值创建一个AtomicBoolean</p>
      */
     public AtomicBoolean() {
     }
 
     /**
      * Returns the current value.
-     *
+     *<p>返回当前值</p>
      * @return the current value
      */
     public final boolean get() {
@@ -93,10 +95,13 @@ public class AtomicBoolean implements java.io.Serializable {
      * Atomically sets the value to the given updated value
      * if the current value {@code ==} the expected value.
      *
-     * @param expect the expected value
-     * @param update the new value
+     *<p>如果当前值与预期值(expect)值相等,就原子性的将当前值设置为需要更新的值(update)</p>
+     *
+     * @param expect the expected value(预期值)
+     * @param update the new value(要设置的更新值)
      * @return {@code true} if successful. False return indicates that
      * the actual value was not equal to the expected value.
+     * <p>如果成功返回true且更新值,如果预期值与当前值不相等则返回false且不更新值</p>
      */
     public final boolean compareAndSet(boolean expect, boolean update) {
         int e = expect ? 1 : 0;
@@ -108,9 +113,12 @@ public class AtomicBoolean implements java.io.Serializable {
      * Atomically sets the value to the given updated value
      * if the current value {@code ==} the expected value.
      *
+     *<p>如果当前值与预期值(expect)值相等,就原子性的将当前值设置为需要更新的值(update)</p>
+     *
      * <p><a href="package-summary.html#weakCompareAndSet">May fail
      * spuriously and does not provide ordering guarantees</a>, so is
      * only rarely an appropriate alternative to {@code compareAndSet}.
+     * <p>可能会出现虚假失败并且不能保证提供排序,只能很少的替换compareAndSet方法</p>
      *
      * @param expect the expected value
      * @param update the new value
